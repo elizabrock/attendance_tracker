@@ -3,6 +3,7 @@ ruby '2.2.2'
 #ruby-gemset=attendance_tracker
 
 gem 'coffee-rails', '~> 4.1.0'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '4.2.1'
