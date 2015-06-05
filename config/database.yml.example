@@ -78,8 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: attendance_tracker_production
-  username: attendance_tracker
-  password: <%= ENV['ATTENDANCE_TRACKER_DATABASE_PASSWORD'] %>
+# production:
+#   <<: *default
+#   database: attendance_tracker_production
+#   username: attendance_tracker
+#   password: <%= ENV['ATTENDANCE_TRACKER_DATABASE_PASSWORD'] %>
