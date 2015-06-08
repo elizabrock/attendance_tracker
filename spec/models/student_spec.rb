@@ -19,20 +19,24 @@ RSpec.describe Student, type: :model do
     let(:martha){ Fabricate(:student, name: "Martha") }
     let(:scott){ Fabricate(:student, name: "Scott") }
 
+    let(:three){ Fabricate(:school_day, date: 3.days.ago) }
+    let(:two){ Fabricate(:school_day, date: 2.days.ago) }
+    let(:one){ Fabricate(:school_day, date: 1.days.ago) }
+
     before do
-      Fabricate(:attendance, student: bob, date: 3.days.ago, present: true)
-      Fabricate(:attendance, student: bob, date: 2.days.ago, present: true)
-      Fabricate(:attendance, student: bob, date: 1.days.ago, present: true)
-      Fabricate(:attendance, student: sally, date: 3.days.ago, present: true)
-      Fabricate(:attendance, student: sally, date: 2.days.ago, present: true)
-      Fabricate(:attendance, student: sally, date: 1.days.ago, present: true)
-      Fabricate(:attendance, student: joe, date: 3.days.ago, present: false)
-      Fabricate(:attendance, student: joe, date: 2.days.ago, present: true)
-      Fabricate(:attendance, student: joe, date: 1.days.ago, present: false)
-      Fabricate(:attendance, student: amanda, date: 3.days.ago, present: true)
-      Fabricate(:attendance, student: amanda, date: 2.days.ago, present: true)
-      Fabricate(:attendance, student: amanda, date: 1.days.ago, present: false)
-      Fabricate(:attendance, student: martha, date: 1.days.ago, present: true)
+      Fabricate(:attendance, student: bob, school_day: three, present: true)
+      Fabricate(:attendance, student: bob, school_day: two, present: true)
+      Fabricate(:attendance, student: bob, school_day: one, present: true)
+      Fabricate(:attendance, student: sally, school_day: three, present: true)
+      Fabricate(:attendance, student: sally, school_day: two, present: true)
+      Fabricate(:attendance, student: sally, school_day: one, present: true)
+      Fabricate(:attendance, student: joe, school_day: three, present: false)
+      Fabricate(:attendance, student: joe, school_day: two, present: true)
+      Fabricate(:attendance, student: joe, school_day: one, present: false)
+      Fabricate(:attendance, student: amanda, school_day: three, present: true)
+      Fabricate(:attendance, student: amanda, school_day: two, present: true)
+      Fabricate(:attendance, student: amanda, school_day: one, present: false)
+      Fabricate(:attendance, student: martha, school_day: one, present: true)
       scott
     end
     it "returns the students sorted by attendance percent, then name" do

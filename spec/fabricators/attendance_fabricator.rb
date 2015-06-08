@@ -1,5 +1,5 @@
 Fabricator(:attendance) do
   student
-  date { Date.today }
+  school_day
   present { true }
 end
