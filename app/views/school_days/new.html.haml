@@ -1,0 +1,12 @@
+= simple_form_for @school_day, url: attendances_path do |f|
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Attendance
+    %tbody
+      = f.simple_fields_for :attendances do |g|
+        %tr
+          %td= g.object.student.name
+          %td= g.input :present
+  = f.button :submit, "Save Attendance"
