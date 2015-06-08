@@ -1,2 +1,15 @@
 %h1 Attendance Leaderboard
-%p There are currently no students in the system
+- if Student.all.empty?
+  %p There are currently no students in the system
+
+- else
+  %table#leader_board
+    %thead
+      %tr
+        %th Name
+        %th Attendance
+    %tbody
+      - Student.all.each do |student|
+        %tr
+          %td= student.name
+          %td N/A
