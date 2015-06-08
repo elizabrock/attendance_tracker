@@ -1,5 +1,5 @@
 %h1 Attendance Leaderboard
-- if Student.all.empty?
+- if @students.empty?
   %p There are currently no students in the system
 
 - else
@@ -9,7 +9,7 @@
         %th Name
         %th Attendance
     %tbody
-      - Student.all.each do |student|
+      - @students.each do |student|
         %tr
           %td= student.name
-          %td N/A
+          %td #{student.attendances.percent_present}%
