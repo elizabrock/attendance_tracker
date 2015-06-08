@@ -12,4 +12,4 @@
       - @students.each do |student|
         %tr
           %td= student.name
-          %td #{student.attendances.percent_present}%
+          %td= attendance_summary_for(student)

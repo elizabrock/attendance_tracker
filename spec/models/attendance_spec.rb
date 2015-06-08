@@ -47,6 +47,13 @@ RSpec.describe Attendance, type: :model do
       it { student.attendances.percent_present.should == 100 }
     end
 
+    context "absent on first day" do
+      before do
+        Fabricate(:attendance, student: student, date: 1.days.ago, present: false)
+      end
+      it { student.attendances.percent_present.should == 0 }
+    end
+
     context "brand new" do
       it { student.attendances.percent_present.should == 0 }
     end

@@ -13,7 +13,6 @@ feature "Homepage displays attendance leaderboard" do
     visit root_path
     page.should_not have_content("There are currently no students in the system")
     within("table#leader_board tbody") do
-      pending
       within("tr:nth-child(1)") do
         page.should have_content("Amanda")
         page.should have_content("N/A")
@@ -78,7 +77,6 @@ feature "Homepage displays attendance leaderboard" do
       end
       within("tr:nth-child(6)") do
         page.should have_content("Scott")
-        pending
         page.should have_content("N/A")
       end
     end
